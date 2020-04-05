@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Blog for men</title>
-</head>
-
-<body>
-  <div class="">
-    <h1><a href="/">Blog for men</a></h1>
-  </div>
-  {% for post in posts %}
-  <div class="">
-    <h1><a href="">{{post.title}}</a></h1>
-    <p>Пост опубликован:{{post.created_date}}</p>
-    <p>{{post.text|linebreaksbr}}</p>
-  </div>
-  {% endfor %}
-</body>
-
-</html>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+<div class="post">
+  <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+  
+</div>
+<div class="date">
+  <p>Опубликовано: {{ post.published_date }}</p>
+</div>
+<div class="author">
+  <p>Автор поста: {{ post.author }}</p>
+</div>
+{% endfor %}
+{% endblock %}
