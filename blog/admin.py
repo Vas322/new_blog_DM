@@ -12,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Введите автора', {'fields': ['author']}),
         ('Введите название поста', {'fields': ['title']}),
-        ('Введите текст поста', {'fields': ['text']}),
+        ('Введите текст поста', {'fields': ['text'[:20]]}),
         ('Информация о дате создания поста', {'fields': ['created_date']}),
         ('Информация о дате публикации поста', {'fields': ['published_date']}),
     ]

@@ -27,7 +27,9 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return self.text
+        if len(self.text) <= 50:
+            return self.text
+        return self.text[:50] + "..."
 
 
 class Comment(models.Model):
