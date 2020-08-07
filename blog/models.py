@@ -12,10 +12,6 @@ class Post(models.Model):
     published_date = models.DateTimeField('Дата публикации поста (опционно)', blank=True,
                                           null=True)
 
-    created_date = models.DateTimeField('Дата создания поста', default=timezone.now)
-    published_date = models.DateTimeField('Дата публикации поста (опционно)', blank=True,
-                                          null=True)
-
     class Meta:
         """Атрибут, позволяющий использовать форму множественного числа 'Посты' """
         verbose_name = 'Пост'
